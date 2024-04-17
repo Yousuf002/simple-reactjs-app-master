@@ -26,7 +26,7 @@ pipeline {
         stage('Run Docker Image') {
             steps {
                 // Run Docker image
-                sh 'docker run -d -p 3000:3000 lab10'
+                bat 'docker run -d -p 3000:3000 lab10'
             }
         }
 
