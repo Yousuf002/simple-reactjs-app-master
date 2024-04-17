@@ -12,14 +12,14 @@ pipeline {
         stage('Dependency Installation') {
             steps {
                 // Install dependencies for the frontend
-                sh 'npm install' // Assuming npm is used for dependency management
+                bat 'npm install' // Assuming npm is used for dependency management
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 // Build Docker image for containerizing the project
-                sh 'docker build -t lab10 .'
+                bat 'docker build -t lab10 .'
             }
         }
 
