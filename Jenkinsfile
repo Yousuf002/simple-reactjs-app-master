@@ -19,21 +19,21 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build Docker image for containerizing the project
-                sh 'docker build -t your-image-name .'
+                sh 'docker build -t lab10 .'
             }
         }
 
         stage('Run Docker Image') {
             steps {
                 // Run Docker image
-                sh 'docker run -d -p 8080:80 your-image-name'
+                sh 'docker run -d -p 8081:80 lab10'
             }
         }
 
         stage('Push Docker Image') {
             steps {
                 // Push Docker image to Docker Hub
-                sh 'docker push your-docker-hub-username/your-image-name'
+                bat 'docker push lab10'
             }
         }
     }
